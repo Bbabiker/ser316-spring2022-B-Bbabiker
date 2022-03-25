@@ -47,7 +47,7 @@ public class BlackBoxGiven {
         return constructor.newInstance(age);
     }
 
-   // A sample Cart
+    // A sample Cart
 
     Cart cart1, cart2, cart3, cart4, cart5, cart6;
     double cart1Expected, cart2Expected, cart3Expected, cart4Expected, cart5Expected, cart6Expected;
