@@ -19,4 +19,5 @@
 *.tar.gz
 *.rar
 *.bin
-*.gradle/6.9.1/
+.gradle/
+.Build/
