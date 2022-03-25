@@ -20,4 +20,4 @@
 *.rar
 *.bin
 .gradle/
-.Build/
+Build/
