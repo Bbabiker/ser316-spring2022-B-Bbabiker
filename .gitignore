@@ -18,6 +18,6 @@
 *.zip
 *.tar.gz
 *.rar
-*.bin
-gradle/
-Build/
+*.build
+*.gradle
+
