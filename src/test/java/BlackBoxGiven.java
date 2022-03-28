@@ -52,7 +52,6 @@ public class BlackBoxGiven {
     Cart cart1, cart2, cart3, cart4, cart5, cart6;
     double cart1Expected, cart2Expected, cart3Expected, cart4Expected, cart5Expected, cart6Expected;
 
-
     
     // check for Alcohol+Frozen along with other items
     @org.junit.Before
@@ -62,6 +61,9 @@ public class BlackBoxGiven {
 
         // cart created with an age 40 shopper
         cart1 = createCart(40);
+        
+        cart1.addItem(new Produce());
+        
         for (int i = 0; i < 2; i++) {
             cart1.addItem(new Alcohol());
             
@@ -73,7 +75,7 @@ public class BlackBoxGiven {
             cart1.addItem(new Meat());
         }
 
-        cart1Expected = 70.2;
+        cart1Expected = 72.36;
     }
     
     
@@ -100,7 +102,7 @@ public class BlackBoxGiven {
     
     
     
-     // test when atlest one dicount is applicaple for items in the cart
+     // test when atlest one discount is applicaple for items in the cart
     @org.junit.Before
     public void setUp3() throws Exception {
 
