@@ -9,7 +9,7 @@
 
 | ID # | Location (File)| Line Number |Problem Description |Category |Severity|
 |---|---|---|---|---|---|---|
-| 1  |Alcohol.java|line 1|No file banner comments present|CG|Low|  
+| 1 |Alcohol.java|line 1|No file banner comments present|CG|Low|  
 | 2 |Alcohol.java|line 2|No class banner comments present|CG|Low|      
 | 3 |Cart.java|line 9|Attributes are public|CG|MJ|      
 | 4 |Cart.java|line 83|Switch statements|CS|Low|      
