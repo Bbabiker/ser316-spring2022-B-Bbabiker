@@ -78,7 +78,7 @@ public class Cart {
     }
 
     // Gets the tax based on state and the total
-    public double getTax(double totalBT, String twoLetterUSStateAbbreviation) {
+    public double getTax(double totalBT, String usState) { // shortened the Identifier length
         double newTotal = 0;
         switch (twoLetterUSStateAbbreviation) {
             case "AZ":
