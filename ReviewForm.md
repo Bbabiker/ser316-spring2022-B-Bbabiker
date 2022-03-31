@@ -11,12 +11,14 @@
 |---|---|---|---|---|---|---|
 | 1 |Alcohol.java|line 1|No file banner comments present|CG|Low|  
 | 2 |Alcohol.java|line 2|No class banner comments present|CG|Low|      
-| 3 |Cart.java|line 9|Attributes are public|CG|MJ|      
-| 4 |Cart.java|line 83|Switch statements|CS|Low|      
-| 5 |Cart.java|line 118|Public constructor missing  method banner comment|CG|Low| 
-| 6 |Cart.java|line 37|Long method|CS|Low|      
-| 7 |Cart.java|line 38|Unsuitable data type|FD|MJ|      
-| 8 |Cart.java|line 41|Unsuitable data type|FD|MJ|      
+| 3 |Cart.java|line 9|Attributes are public|CG|MJ|   
+| 4 |Cart.java|line 81|Switch statements|CS|Low|  
+| 5 |Cart.java|line 83|Switch statements|CS|Low|      
+| 6 |Cart.java|line 118|Public constructor missing  method banner comment|CG|Low| 
+| 7 |Cart.java|line 37|Long method|CS|Low|      
+| 8 |Cart.java|line 37|Unsuitable data type|FD|MJ| 
+| 9 |Cart.java|line 38|Unsuitable data type|FD|MJ|      
+| 10|Cart.java|line 41|Unsuitable data type|FD|MJ|      
 ## 3: After the Sprint
 
 ### Category
