@@ -31,7 +31,7 @@ public class Cart {
         return 0; //implement me, will be important for assignment 4 (nothing to do here for assignment 3)
     }
 
-    // calculates how much was saved in the current shopping cart based on the deals, returns the saved amount
+    // calculates  how much was saved in the current shopping cart based on the deals, returns the saved amount
     // throws exception if alcohol is bought from underage person
     // TODO: Create node graph for this method in assign 4: create white box tests and fix the method, reach at least 98% coverage
     public double Amount_saved() throws UnderAgeException {
