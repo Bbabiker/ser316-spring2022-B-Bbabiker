@@ -6,7 +6,7 @@ import java.util.List;
 public class Cart {
 
     protected int userAge;
-    public List<Product> cart; //change access modifier from public to protected
+    protected List<Product> cart; //change access modifier from public to protected
     public int cartStorage;
 
     /**
@@ -34,7 +34,7 @@ public class Cart {
     // calculates how much was saved in the current shopping cart based on the deals, returns the saved amount
     // throws exception if alcohol is bought from underage person
     // TODO: Create node graph for this method in assign 4: create white box tests and fix the method, reach at least 98% coverage
-    public double Amount_saved() throws UnderAgeException {
+    public int Amount_saved() throws UnderAgeException {
         int subTotal = 0;
         int costAfterSavings = 0;
 
@@ -78,7 +78,7 @@ public class Cart {
     }
 
     // Gets the tax based on state and the total
-    public double getTax(double totalBT, String usState) {
+    public double getTax(double totalBT, String twoLetterUSStateAbbreviation) {
         double newTotal = 0;
         switch (twoLetterUSStateAbbreviation) {
             case "AZ":
