@@ -6,7 +6,7 @@ import java.util.List;
 public class Cart {
 
     protected int userAge;
-    public List<Product> cart;
+    protected List<Product> cart;  // change access modifier from public to protected
     public int cartStorage;
 
     /**
