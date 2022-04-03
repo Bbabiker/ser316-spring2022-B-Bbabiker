@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 public class WhiteBoxGiven {
 
-    Cart cart, cart1, cart2, cart3, cart4,cart5,cart6,cart7,cart8,cart9;
+    Cart cart, cart1, cart2, cart3, cart4,cart5,cart6,cart7,cart8,cart9,cart10;
 
     @Before
     public void setUp() throws Exception {
@@ -32,6 +32,8 @@ public class WhiteBoxGiven {
        }
         
     }
+    
+    
     
     @Before
     public void setUp2() throws Exception {
@@ -105,6 +107,18 @@ public class WhiteBoxGiven {
         cart9.RemoveItem(alcohol);
          
     }
+    
+    
+    @Before
+    public void setUp10() throws Exception {
+        cart10 = new Cart(45);
+         for (int i = 0; i < 4; i++) {
+            cart10.addItem(new Alcohol());
+            cart10.addItem(new FrozenFood());
+             cart10.addItem(new Produce());
+        }
+         
+    }
 
 
     @After
@@ -171,7 +185,11 @@ public class WhiteBoxGiven {
         assertEquals(0, saving, .01);
     }
     
-    
+    @Test
+    public void Amount_save10() throws UnderAgeException {
+        double saving =cart10.Amount_saved();
+        assertEquals(13, saving, .01);
+    }
     @Test
     public void addItem() throws UnderAgeException {
         int length =cart8.cart.size();
@@ -186,4 +204,6 @@ public class WhiteBoxGiven {
        // length+=1;
         assertEquals(0, length, .01);
     }
+    
+    
 }
