@@ -128,7 +128,7 @@ public class WhiteBoxGiven {
 
     @Test
     public void getTax() {
-        assertEquals(4.0, cart.getTax(50, "AZ"), .01);
+        assertEquals(3.5, cart.getTax(50, "CO"), .01);
     }
 
     @Test
