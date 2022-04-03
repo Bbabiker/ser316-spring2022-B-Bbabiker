@@ -130,6 +130,11 @@ public class WhiteBoxGiven {
     public void getTax() {
         assertEquals(3.5, cart.getTax(50, "CO"), .01);
     }
+    
+     @Test
+    public void getTax2() {
+        assertEquals(50, cart.getTax(50, "MM"), .01);
+    }
 
     @Test
     public void Amount_save() throws UnderAgeException {
