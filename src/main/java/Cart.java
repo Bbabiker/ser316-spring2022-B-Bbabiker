@@ -155,8 +155,8 @@ return subTotal - costAfterSavings;
             case "CO":
                 newTotal = totalBT * .07;
                 break;
-            default:
-                return totalBT;
+           // default:
+                //return totalBT;
         }
         return newTotal;
     }
