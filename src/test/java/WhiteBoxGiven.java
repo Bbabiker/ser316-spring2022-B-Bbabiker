@@ -102,14 +102,24 @@ public class WhiteBoxGiven {
     public void setUp9() throws Exception {
         cart9 = new Cart(45);
          Alcohol alcohol = new Alcohol();
+         FrozenFood frozen = new FrozenFood();
         cart9.addItem(alcohol);
-      
+      cart9.RemoveItem(frozen);
         cart9.RemoveItem(alcohol);
          
     }
     
     
-   
+    @Before
+    public void setUp10() throws Exception {
+        cart10 = new Cart(45);
+         for (int i = 0; i < 4; i++) {
+            cart10.addItem(new Alcohol());
+            cart10.addItem(new FrozenFood());
+             cart10.addItem(new Produce());
+        }
+         
+    }
 
 
     @After
@@ -176,7 +186,11 @@ public class WhiteBoxGiven {
         assertEquals(0, saving, .01);
     }
     
-    
+    @Test
+    public void Amount_save10() throws UnderAgeException {
+        double saving =cart10.Amount_saved();
+        assertEquals(13, saving, .01);
+    }
     @Test
     public void addItem() throws UnderAgeException {
         int length =cart8.cart.size();
