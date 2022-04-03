@@ -133,7 +133,7 @@ public class WhiteBoxGiven {
     
      @Test
     public void getTax2() {
-        assertEquals(50, cart.getTax(50, "MM"), .01);
+        assertEquals(0, cart.getTax(50, "MM"), .01);
     }
 
     @Test
