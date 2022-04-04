@@ -113,9 +113,9 @@ public class WhiteBoxGiven {
     @Before
     public void setUp10() throws Exception {
         cart10 = new Cart(45);
-         for (int i = 0; i < 4; i++) {
+         for (int i = 0; i < 2; i++) {
             cart10.addItem(new Alcohol());
-            cart10.addItem(new FrozenFood());
+           // cart10.addItem(new FrozenFood());
              cart10.addItem(new Produce());
         }
          
@@ -194,7 +194,7 @@ public class WhiteBoxGiven {
     @Test
     public void Amount_save10() throws UnderAgeException {
         double saving =cart10.Amount_saved();
-        assertEquals(13, saving, .01);
+        assertEquals(0, saving, .01);
     }
     @Test
     public void addItem() throws UnderAgeException {
