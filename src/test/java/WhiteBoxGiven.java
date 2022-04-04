@@ -117,6 +117,7 @@ public class WhiteBoxGiven {
             cart10.addItem(new Alcohol());
            // cart10.addItem(new FrozenFood());
              cart10.addItem(new Produce());
+              cart10.addItem(new Dairy());
         }
          
     }
