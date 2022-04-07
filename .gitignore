@@ -19,6 +19,7 @@
 *.tar.gz
 *.rar
 
+
 *.build
 *.gradle
 
@@ -28,3 +29,7 @@
 
 
 .gradle/
+
+*.build
+*.gradle
+
