@@ -18,6 +18,13 @@
 *.zip
 *.tar.gz
 *.rar
+
 *.build
 *.gradle
 
+*.build/
+*.gradle/
+.gradle/6.9.1/
+
+
+.gradle/
