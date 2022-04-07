@@ -1,17 +1,17 @@
-# Compiled class file
+# Compiled class file#
 *.class
 *.DS_Store
-# Log file
+# Log file#
 *.log
 
-# BlueJ files
+# BlueJ files#
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
+# Mobile Tools for Java (J2ME)#
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar#
 *.war
 *.nar
 *.ear
