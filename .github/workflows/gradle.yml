@@ -29,6 +29,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: ./gradlew build
+      uses: ./.github/workflows/gradle.yml
       with:
         arguments: build
