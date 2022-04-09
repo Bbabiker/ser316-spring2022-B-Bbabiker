@@ -19,9 +19,6 @@
 *.zip
 *.tar.gz
 *.rar
-
 *.build
-*.gradle
+*.gradle/
 
-
-.gradle/
