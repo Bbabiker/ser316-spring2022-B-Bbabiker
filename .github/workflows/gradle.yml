@@ -9,10 +9,15 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ master, Review, StaticAnalysis, WhiteBox, blackbox ]
+    branches: 
+    - main
+    - "*"
+    
   pull_request:
-    branches: [ master, Review, StaticAnalysis, WhiteBox, blackbox]
-
+    branches: 
+    - main
+    - "*"
+ 
 permissions:
   contents: read
 
@@ -29,6 +34,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: ./gradlew build
+      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
         arguments: build
