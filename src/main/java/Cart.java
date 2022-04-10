@@ -10,25 +10,25 @@ public class Cart {
     public int cartStorage;
 
     /**
-     * Calculates the final cost after all savings and tax has been applied.Also checks that the user is of age to purchase alcohol if it is in their
- c   * art at checkout.
+     * Calculates the final cost after all savings and tax has been applied.
+     * Also checks that the user is of age to purchase alcohol if it is in their
+     * cart at checkout.
      * Sales tax is always AZ tax.
 
  Calculation is based off of the following prices and deals: Dairy -> $3
      * Meat -> $10 Produce -> $2 or 3 for $5 Alcohol -> $8 Frozen Food -> $5
      * Alcohol + Frozen Food -> $10
-     *
      * If there is an alcohol product in the cart and the user is under 21, then
      * an UnderAgeException should be thrown.
      *
      * @return double totalCost
-     * @throws main.java.UnderAgeException
+     * @throws main.java.UnderAgeException if age less than 21
      */
     public double calcCost() throws UnderAgeException {
 
         double subTotal = 0;  // hold the cart subtotal
         // counter for the products
-        int produce_counter = 0;
+        int producecounter = 0;
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
@@ -40,12 +40,12 @@ public class Cart {
                 // check for Produce
             if (cart.get(i).getClass() == Produce.class) {
 
-                produce_counter++;
+                producecounter++;
 
-                if (produce_counter >= 3) { //if produce >=3 then discount applies
+                if (producecounter >= 3) { //if produce >=3 then discount applies
 
                     subTotal = subTotal - 1; //takes $1 off
-                    produce_counter = 0; // resest counter
+                    producecounter = 0; // resest counter
                 }
                     // check for Alcohol
             } else if (cart.get(i).getClass() == Alcohol.class) {
@@ -99,7 +99,7 @@ public class Cart {
     public double Amount_saved() throws UnderAgeException {  // change teturn type to double to avoid precesion loss
         double subTotal = 0; // change type to double
         double costAfterSavings = 0;  // change type to double
-        int produce_counter = 0;  // change type to int
+        int producecounter = 0;  // change type to int
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
@@ -107,10 +107,10 @@ public class Cart {
             subTotal += cart.get(i).getCost();
             costAfterSavings = costAfterSavings + cart.get(i).getCost();
             if (cart.get(i).getClass() == Produce.class) {
-                produce_counter++;
-                if (produce_counter >= 3) {
+                producecounter++;
+                if (producecounter >= 3) {
                     costAfterSavings -= 1;
-                    produce_counter = 0;
+                    producecounter = 0;
                 }
             } else if (cart.get(i).getClass() == Alcohol.class) {//change the type checking from string to class type
                 alcoholCounter++;
