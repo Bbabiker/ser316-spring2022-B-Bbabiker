@@ -12,14 +12,12 @@ public class Cart {
     /**
      * Calculates the final cost after all savings and tax has been applied.
      * Also checks that the user is of age to purchase alcohol if it is in their
-     * cart at checkout.
-     * Sales tax is always AZ tax.
-
- Calculation is based off of the following prices and deals: Dairy -> $3
+     * cart at checkout. Sales tax is always AZ tax.
+     *
+     * Calculation is based off of the following prices and deals: Dairy -> $3
      * Meat -> $10 Produce -> $2 or 3 for $5 Alcohol -> $8 Frozen Food -> $5
-     * Alcohol + Frozen Food -> $10
-     * If there is an alcohol product in the cart and the user is under 21, then
-     * an UnderAgeException should be thrown.
+     * Alcohol + Frozen Food -> $10 If there is an alcohol product in the cart
+     * and the user is under 21, then an UnderAgeException should be thrown.
      *
      * @return double totalCost
      * @throws main.java.UnderAgeException if age less than 21
@@ -37,23 +35,23 @@ public class Cart {
         for (int i = 0; i < cart.size(); i++) {
 
             subTotal += cart.get(i).getCost();//add products price to subtotal
-                // check for Produce
+            // check for Produce
             if (cart.get(i).getClass() == Produce.class) {
 
-                producecounter++;
+            producecounter++;
 
                 if (producecounter >= 3) { //if produce >=3 then discount applies
 
                     subTotal = subTotal - 1; //takes $1 off
                     producecounter = 0; // resest counter
                 }
-                    // check for Alcohol
+                // check for Alcohol
             } else if (cart.get(i).getClass() == Alcohol.class) {
 
                 if (this.userAge >= 21) { // if age is legal to purchase Alcohol
                     alcoholCounter++; // increment alcohol counter
-                     // check for alcoho+FrozenFood discount
-                    if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
+                    // check for alcoho+FrozenFood discount
+                       if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
 
                         alcoholCounter = 0;//reset the counter
 
