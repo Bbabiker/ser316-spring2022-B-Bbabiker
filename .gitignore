@@ -19,7 +19,7 @@
 *.zip
 *.tar.gz
 *.rar
-<<<<<<< HEAD
+
 *.build/
 *.gradle/
 .gradle/6.9.1/
