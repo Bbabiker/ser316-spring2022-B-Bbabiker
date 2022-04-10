@@ -132,22 +132,22 @@ public class Cart {
     public double getTax(double totalBT, String twoLetterUSStateAbbreviation) {
         double newTotal = 0;
         
-        if(twoLetterUSStateAbbreviation=="AZ"){
+        if(twoLetterUSStateAbbreviation.equals("AZ")){
             
           newTotal = totalBT * .08;  
         }
         
-        if(twoLetterUSStateAbbreviation=="CA"){
+       if(twoLetterUSStateAbbreviation.equals("CA")){
             
           newTotal = totalBT * .09;  
         }
         
-        if(twoLetterUSStateAbbreviation=="NY"){
+        if(twoLetterUSStateAbbreviation.equals("NY")){
             
            newTotal = totalBT * .1;  
         }
         
-        if(twoLetterUSStateAbbreviation=="CO"){
+       if(twoLetterUSStateAbbreviation.equals("CO")){
             
           newTotal = totalBT * .07; 
         }
