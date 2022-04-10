@@ -7,7 +7,7 @@ public class Cart {
 
     protected int userAge;
     public List<Product> cart;
-    public int cartStorage;
+   // public int cartStorage;  //SER316 TASK 2 SPOT- BUGS FIX
 
     /**
      * Calculates the final cost after all savings and tax has been applied.
@@ -144,7 +144,8 @@ public class Cart {
                 newTotal = totalBT * .07;
                 break;
             default:
-            //return totalBT; // ommiting Default this way if a user enter an invalid State
+            return totalBT=0; //SER316 TASK 2 SPOT- BUGS FIX
+                       
             // the method returns 0
         }
         return newTotal;
@@ -154,7 +155,7 @@ public class Cart {
         cart.add(np);
     }
 
-    public boolean RemoveItem(Product productToRemove) {
+    public boolean removeItem(Product productToRemove) {//SER316 TASK 2 SPOT- BUGS FIX
         boolean test = false;
         for (int i = 0; i < cart.size(); i++) {
             if (cart.get(i) == productToRemove) {

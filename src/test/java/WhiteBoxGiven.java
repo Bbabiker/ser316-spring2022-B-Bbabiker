@@ -103,8 +103,8 @@ public class WhiteBoxGiven {
         Alcohol alcohol = new Alcohol();
         FrozenFood frozen = new FrozenFood();
         cart9.addItem(alcohol);
-        cart9.RemoveItem(frozen);
-        cart9.RemoveItem(alcohol);
+        cart9.removeItem(frozen);
+        cart9.removeItem(alcohol);
 
     }
 
