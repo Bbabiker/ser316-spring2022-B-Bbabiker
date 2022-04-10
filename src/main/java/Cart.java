@@ -7,7 +7,7 @@ public class Cart {
 
     protected int userAge;
     public List<Product> cart;
-   // public int cartStorage;//SER316 TASK 2 SPOT- BUGS FIX
+    // public int cartStorage;//SER316 TASK 2 SPOT- BUGS FIX
 
     /**
      * Calculates the final cost after all savings and tax has been applied.
@@ -131,33 +131,31 @@ public class Cart {
     // Gets the tax based on state and the total
     public double getTax(double totalBT, String twoLetterUSStateAbbreviation) {
         double newTotal = 0;
-        
+
         //SER316 TASK 2 SPOT- BUGS FIX
-        if(twoLetterUSStateAbbreviation.equals("AZ")){
-            
-          newTotal = totalBT * .08;  
+        if (twoLetterUSStateAbbreviation.equals("AZ")) {
+
+            newTotal = totalBT * .08;
         }
-        
+
         //SER316 TASK 2 SPOT- BUGS FIX
-        
-       if(twoLetterUSStateAbbreviation.equals("CA")){
-            
-          newTotal = totalBT * .09;  
+        if (twoLetterUSStateAbbreviation.equals("CA")) {
+
+            newTotal = totalBT * .09;
         }
-        
-       //SER316 TASK 2 SPOT- BUGS FIX
-        if(twoLetterUSStateAbbreviation.equals("NY")){
-            
-           newTotal = totalBT * .1;  
-        }
-        
+
         //SER316 TASK 2 SPOT- BUGS FIX
-        
-       if(twoLetterUSStateAbbreviation.equals("CO")){
-            
-          newTotal = totalBT * .07; 
+        if (twoLetterUSStateAbbreviation.equals("NY")) {
+
+            newTotal = totalBT * .1;
         }
-        
+
+        //SER316 TASK 2 SPOT- BUGS FIX
+        if (twoLetterUSStateAbbreviation.equals("CO")) {
+
+            newTotal = totalBT * .07;
+        }
+
         return newTotal;
     }
 
