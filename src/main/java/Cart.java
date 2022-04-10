@@ -7,7 +7,7 @@ public class Cart {
 
     protected int userAge;
     public List<Product> cart;
-   // public int cartStorage;  //SER316 TASK 2 SPOT- BUGS FIX
+   // public int cartStorage;//SER316 TASK 2 SPOT- BUGS FIX
 
     /**
      * Calculates the final cost after all savings and tax has been applied.
@@ -144,9 +144,10 @@ public class Cart {
                 newTotal = totalBT * .07;
                 break;
             default:
-            return totalBT=0; //SER316 TASK 2 SPOT- BUGS FIX
-                       
-            // the method returns 0
+                 totalBT=0;//SER316 TASK 2 SPOT- BUGS 
+                break;
+           // return totalBT=0; // ommiting Default this way if a user enter an invalid State
+            
         }
         return newTotal;
     }
