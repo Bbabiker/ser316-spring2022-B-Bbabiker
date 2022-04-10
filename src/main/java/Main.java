@@ -3,9 +3,9 @@ package main.java;
 public class Main {
 
     /**
-     * 
-     * @param args
-     * @throws UnderAgeException 
+     * main method
+     * @param args main execution
+     * @throws UnderAgeException if age < 21
      */
     public static void main(String[] args) throws UnderAgeException {
 
