@@ -10,8 +10,7 @@ public class Cart {
     public int cartStorage;
 
     /**
-     * Calculates the final cost after all savings and tax has been applied.
-     * Also checks that the user is of age to purchase alcohol if it is in their
+     * Calculates the final cost after all savings and tax has been applied.Also checks that the user is of age to purchase alcohol if it is in their
  c   * art at checkout.
      * Sales tax is always AZ tax.
 
@@ -23,7 +22,7 @@ public class Cart {
      * an UnderAgeException should be thrown.
      *
      * @return double totalCost
-     * @throws UnderAgeException: 
+     * @throws main.java.UnderAgeException
      */
     public double calcCost() throws UnderAgeException {
 

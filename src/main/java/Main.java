@@ -3,7 +3,7 @@ package main.java;
 public class Main {
 
     /**
-     * main method
+     * main method.
      * @param args main execution
      * @throws UnderAgeException if age < 21
      */
