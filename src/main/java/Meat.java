@@ -1,6 +1,7 @@
 package main.java;
 
 public class Meat extends Product {
+
     public Meat() {
         super(10);
     }

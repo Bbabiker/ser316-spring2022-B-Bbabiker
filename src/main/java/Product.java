@@ -1,6 +1,7 @@
 package main.java;
 
 public class Product {
+
     private int cost;
 
     public Product(int cost) {

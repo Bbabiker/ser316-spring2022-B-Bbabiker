@@ -1,66 +1,36 @@
-package test.java;
 
-import main.java.*;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.lang.reflect.Constructor;
-import java.util.Arrays;
-import java.util.Collection;
-
+import main.java.Alcohol;
 import main.java.Cart;
-import main.java.Cart1;
-import main.java.Cart2;
-import main.java.Cart3;
-import main.java.Cart4;
-import main.java.Cart5;
-
+import main.java.Dairy;
+import main.java.FrozenFood;
+import main.java.Meat;
+import main.java.Produce;
+import main.java.UnderAgeException;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
-@RunWith(Parameterized.class)
-public class BlackBoxGiven {
+/**
+ *
+ * @author babikerbabiker
+ */
+public class costTest {
 
-    private Class<Cart> classUnderTest;
-
-    @SuppressWarnings("unchecked")
-    public BlackBoxGiven(Object classUnderTest) {
-        this.classUnderTest = (Class<Cart>) classUnderTest;
-    }
-
-    // Define all classes to be tested
-    @Parameterized.Parameters
-    public static Collection<Object[]> cartClassUnderTest() {
-        Object[][] classes = {
-            {Cart0.class},
-            {Cart1.class},
-            {Cart2.class},
-            {Cart3.class},
-            {Cart4.class},
-            {Cart5.class}
-        };
-        return Arrays.asList(classes);
-    }
-
-    private Cart createCart(int age) throws Exception {
-        Constructor<Cart> constructor = classUnderTest.getConstructor(Integer.TYPE);
-        return constructor.newInstance(age);
-    }
-
-    // A sample Cart
     Cart cart1, cart2, cart3, cart4, cart5, cart6;
     double cart1Expected, cart2Expected, cart3Expected, cart4Expected, cart5Expected, cart6Expected;
 
-    // check for Alcohol+Frozen along with other items
+    public costTest() {
+    }
+
     @org.junit.Before
     public void setUp() throws Exception {
 
         // all carts should be set up like this
         // cart created with an age 40 shopper
-        cart1 = createCart(40);
-
-        cart1.addItem(new Produce());
-
+        cart1 = new Cart(40);
         for (int i = 0; i < 2; i++) {
             cart1.addItem(new Alcohol());
 
@@ -72,7 +42,7 @@ public class BlackBoxGiven {
             cart1.addItem(new Meat());
         }
 
-        cart1Expected = 72.36;
+        cart1Expected = 70.2;
     }
 
     // test when atlest one item from each product is in the cart
@@ -80,7 +50,7 @@ public class BlackBoxGiven {
     public void setUp2() throws Exception {
 
         // cart created with an age 40 shopper
-        cart2 = createCart(40);
+        cart2 = new Cart(40);
 
         cart2.addItem(new Alcohol());
 
@@ -94,11 +64,11 @@ public class BlackBoxGiven {
         cart2Expected = 27;
     }
 
-    // test when atlest one discount is applicaple for items in the cart
+    // test when atlest one dicount is applicaple for items in the cart
     @org.junit.Before
     public void setUp3() throws Exception {
 
-        cart3 = createCart(40);
+        cart3 = new Cart(40);
 
         for (int i = 0; i < 2; i++) {
             cart3.addItem(new Alcohol());
@@ -125,7 +95,7 @@ public class BlackBoxGiven {
     @org.junit.Before
     public void setUp4() throws Exception {
 
-        cart4 = createCart(40);
+        cart4 = new Cart(40);
 
         for (int i = 0; i < 100; i++) {
             cart4.addItem(new Alcohol());
@@ -151,7 +121,7 @@ public class BlackBoxGiven {
     public void setUp5() throws Exception {
 
         // cart created with an age 21 shopper
-        cart5 = createCart(21);
+        cart5 = new Cart(21);
 
         cart5.addItem(new Alcohol());
 
@@ -163,7 +133,7 @@ public class BlackBoxGiven {
     public void setUp6() throws Exception {
 
         // cart created with an age 20 shopper
-        cart6 = createCart(20);
+        cart6 = new Cart(20);
 
         cart6.addItem(new Alcohol());
 
@@ -224,7 +194,7 @@ public class BlackBoxGiven {
 
     // check for Alcohol age restruction
     // used EP and BVA
-    @Test
+    @Test(expected = UnderAgeException.class)
     public void calcCostCart6() throws UnderAgeException {
 
         double amount = cart6.calcCost();

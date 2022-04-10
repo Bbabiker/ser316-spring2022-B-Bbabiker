@@ -21,10 +21,9 @@ dependencies {
     compile files('cls/')
 }
 
-test{
+test {
 
     exclude '**/BlackBoxGiven.class'
-
 }
 
 
@@ -35,17 +34,22 @@ test{
  checkstyle {
 //   // Keep checkstyle a little quieter
    ignoreFailures = true
-   showViolations = false
+
+  showViolations = false
+
  }
 
  tasks.withType(Checkstyle) {
    reports {
      html.enabled = true
-     xml.enabled = false
-   }
+
+    xml.enabled = false
+  }
  }
+ 
  checkstyle {
-     toolVersion = "8.8"
+    toolVersion = "8.8"
+
  }
 
 
