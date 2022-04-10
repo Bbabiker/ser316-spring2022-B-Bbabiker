@@ -132,7 +132,26 @@ public class Cart {
     public double getTax(double totalBT, String twoLetterUSStateAbbreviation) {
         double newTotal = 0;
         
-        switch (twoLetterUSStateAbbreviation) {
+        if(twoLetterUSStateAbbreviation=="AZ"){
+            
+          newTotal = totalBT * .08;  
+        }
+        
+        if(twoLetterUSStateAbbreviation=="CA"){
+            
+          newTotal = totalBT * .09;  
+        }
+        
+        if(twoLetterUSStateAbbreviation=="NY"){
+            
+           newTotal = totalBT * .1;  
+        }
+        
+        if(twoLetterUSStateAbbreviation=="CO"){
+            
+          newTotal = totalBT * .07; 
+        }
+        /*switch (twoLetterUSStateAbbreviation) {
             case "AZ":
                 newTotal = totalBT * .08;
                 break;
@@ -149,7 +168,7 @@ public class Cart {
                 break;
            // return totalBT=0; // ommiting Default this way if a user enter an invalid State
             
-        }
+        }*/
         
         return newTotal;
     }
