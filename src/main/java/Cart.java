@@ -6,6 +6,7 @@ import java.util.List;
 public class Cart {
 
     protected int userAge;
+
     public List<Product> cart;
     // public int cartStorage;//SER316 TASK 2 SPOT- BUGS FIX
 
