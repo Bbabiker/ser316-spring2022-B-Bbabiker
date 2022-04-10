@@ -10,11 +10,11 @@ public class Cart {
     public int cartStorage;
 
     /**
-     * Calculates the final cost after all savings and tax has been applied.
-     * Also checks that the user is of age to purchase alcohol if it is in their
-     * cart at checkout. Sales tax is always AZ tax.
-     *
-     * Calculation is based off of the following prices and deals: Dairy -> $3
+     * Calculates the final cost after all savings and tax has been applied.Also checks that the user is of age to purchase alcohol if it is in their
+ cart at checkout.
+     * Sales tax is always AZ tax.
+
+ Calculation is based off of the following prices and deals: Dairy -> $3
      * Meat -> $10 Produce -> $2 or 3 for $5 Alcohol -> $8 Frozen Food -> $5
      * Alcohol + Frozen Food -> $10
      *
@@ -22,7 +22,8 @@ public class Cart {
      * an UnderAgeException should be thrown.
      *
      * @return double totalCost
-     * @throws UnderAgeException
+     * @throws main.java.UnderAgeException
+     * @throws UnderAgeException: 
      */
     public double calcCost() throws UnderAgeException {
 
