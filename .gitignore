@@ -1,5 +1,5 @@
 # Compiled class file
-#*.class
+*.class
 *.DS_Store
 # Log file
 *.log
@@ -20,8 +20,8 @@
 *.tar.gz
 *.rar
 
-*.build/
-*.gradle/
-.gradle/6.9.1/
+*.build
+*.gradle
+
 
 
