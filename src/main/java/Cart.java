@@ -10,8 +10,9 @@ public class Cart {
     public int cartStorage;
 
     /**
-     * Calculates the final cost after all savings and tax has been applied.Also checks that the user is of age to purchase alcohol if it is in their
- cart at checkout.
+     * Calculates the final cost after all savings and tax has been applied.
+     * Also checks that the user is of age to purchase alcohol if it is in their
+ c   * art at checkout.
      * Sales tax is always AZ tax.
 
  Calculation is based off of the following prices and deals: Dairy -> $3
@@ -22,7 +23,6 @@ public class Cart {
      * an UnderAgeException should be thrown.
      *
      * @return double totalCost
-     * @throws main.java.UnderAgeException
      * @throws UnderAgeException: 
      */
     public double calcCost() throws UnderAgeException {
@@ -38,8 +38,8 @@ public class Cart {
         for (int i = 0; i < cart.size(); i++) {
 
             subTotal += cart.get(i).getCost();//add products price to subtotal
-
-            if (cart.get(i).getClass() == Produce.class) {// check for Produce
+                // check for Produce
+            if (cart.get(i).getClass() == Produce.class) {
 
                 produce_counter++;
 
@@ -48,12 +48,13 @@ public class Cart {
                     subTotal = subTotal - 1; //takes $1 off
                     produce_counter = 0; // resest counter
                 }
-
-            } else if (cart.get(i).getClass() == Alcohol.class) {// check for Alcohol
+                    // check for Alcohol
+            } else if (cart.get(i).getClass() == Alcohol.class) {
 
                 if (this.userAge >= 21) { // if age is legal to purchase Alcohol
                     alcoholCounter++; // increment alcohol counter
-                    if (alcoholCounter >= 1 && frozenFoodCounter >= 1) { // check for alcoho+FrozenFood discount
+                     // check for alcoho+FrozenFood discount
+                    if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
 
                         alcoholCounter = 0;//reset the counter
 
