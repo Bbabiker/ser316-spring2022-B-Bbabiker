@@ -5,13 +5,10 @@ import main.java.Cart;
 import main.java.Dairy;
 import main.java.FrozenFood;
 import main.java.Produce;
-import main.java.Product;
 import main.java.UnderAgeException;
-import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class WhiteBoxGiven {
 

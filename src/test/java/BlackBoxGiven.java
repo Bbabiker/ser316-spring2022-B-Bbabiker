@@ -1,27 +1,18 @@
 package test.java;
 
+import java.lang.reflect.Constructor;
+import java.util.Arrays;
+import java.util.Collection;
 import main.java.*;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.lang.reflect.Constructor;
-import java.util.Arrays;
-import java.util.Collection;
-
-import main.java.Cart;
-import main.java.Cart1;
-import main.java.Cart2;
-import main.java.Cart3;
-import main.java.Cart4;
-import main.java.Cart5;
-
-import static org.junit.Assert.*;
-
 @RunWith(Parameterized.class)
 public class BlackBoxGiven {
 
-    private Class<Cart> classUnderTest;
+    private final Class<Cart> classUnderTest;
 
     @SuppressWarnings("unchecked")
     public BlackBoxGiven(Object classUnderTest) {
