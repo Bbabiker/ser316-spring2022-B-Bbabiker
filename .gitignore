@@ -1,26 +1,31 @@
 # Compiled class file
-#*.class
-*.DS_Store
+*.class
+
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
+### Eclipse ###
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+### Eclipse Patch ###
+# Eclipse Core		
+.project
+.settings
 
-# Package Files #
+# JDT-specific (Eclipse Java Development Tools)		
+.classpath
 
+### Gradle ###
+.gradle
+/build/
 
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-*.build
-*.gradle
+# Mac DS file
+.DS_Store
 
 
+/bin/
+
+# Intellij IDEA 
+.idea/
+
+# Astah lock files
+*.asta.lock
