@@ -28,15 +28,20 @@ public class Cart {
         double subTotal = 0;  // hold the cart subtotal
         double saving=0;
         // counter for the products
-        int producecounter = 0;
+       /* int producecounter = 0;
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
-        int meatCounter = 0;
+        int meatCounter = 0;*/
 
-        for (int i = 0; i < cart.size(); i++) {
+        for(Product p: cart){
+            subTotal +=p.getCost();
 
-            subTotal += cart.get(i).getCost();//add products price to subtotal
+        }
+
+       // for (int i = 0; i < cart.size(); i++) {
+
+          //  subTotal += cart.get(i).getCost();//add products price to subtotal
             // check for Produce
            /* if (cart.get(i).getClass() == Produce.class) {
                // saving=saving+singleProductSaving(cart,new Produce(),3,1);
@@ -85,7 +90,7 @@ public class Cart {
                 meatCounter++; // increment the counter
 
             }*/
-        }
+       // }
         saving=saving+singleProductSaving(cart,new Produce(),3,1);
         saving=saving+singleProductSaving(cart,new Alcohol(),0,0);
         saving=saving+singleProductSaving(cart,new FrozenFood(),0,0);
@@ -105,15 +110,23 @@ public class Cart {
     public double Amount_saved() throws UnderAgeException {  // change teturn type to double to avoid precesion loss
         double subTotal = 0; // change type to double
         double costAfterSavings = 0;  // change type to double
-        int producecounter = 0;  // change type to int
+       /* int producecounter = 0;  // change type to int
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
-        double saving=0;
-        for (int i = 0; i < cart.size(); i++) {
-            subTotal += cart.get(i).getCost();
+        double saving=0;*/
+
+        for(Product p: cart){
+            subTotal +=p.getCost();
+            costAfterSavings +=p.getCost();
+
+        }
+
+      //  for (int i = 0; i < cart.size(); i++) {
+
+          /*  subTotal += cart.get(i).getCost();
             costAfterSavings = costAfterSavings + cart.get(i).getCost();
-           /* if (cart.get(i).getClass() == Produce.class) {
+            if (cart.get(i).getClass() == Produce.class) {
                 producecounter++;
                 if (producecounter >= 3) {
                     costAfterSavings -= 1;
@@ -137,7 +150,7 @@ public class Cart {
                     frozenFoodCounter--;
                 }
             }*/
-        }
+       // }
         costAfterSavings=costAfterSavings-singleProductSaving(cart,new Produce(),3,1);
 
         costAfterSavings=costAfterSavings-singleProductSaving(cart,new Dairy(),0,0);
