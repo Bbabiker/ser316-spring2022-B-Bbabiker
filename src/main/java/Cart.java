@@ -26,6 +26,7 @@ public class Cart {
     public double calcCost() throws UnderAgeException {
 
         double subTotal = 0;  // hold the cart subtotal
+        double saving=0;
         // counter for the products
         int producecounter = 0;
         int alcoholCounter = 0;
@@ -37,8 +38,8 @@ public class Cart {
 
             subTotal += cart.get(i).getCost();//add products price to subtotal
             // check for Produce
-            if (cart.get(i).getClass() == Produce.class) {
-
+           /* if (cart.get(i).getClass() == Produce.class) {
+               // saving=saving+singleProductSaving(cart,new Produce(),3,1);
                 producecounter++;
 
                 if (producecounter >= 3) { //if produce >=3 then discount applies
@@ -83,9 +84,15 @@ public class Cart {
 
                 meatCounter++; // increment the counter
 
-            }
+            }*/
         }
-
+        saving=saving+singleProductSaving(cart,new Produce(),3,1);
+        saving=saving+singleProductSaving(cart,new Alcohol(),0,0);
+        saving=saving+singleProductSaving(cart,new FrozenFood(),0,0);
+        saving=saving+singleProductSaving(cart,new Dairy(),0,0);
+        saving=saving+singleProductSaving(cart,new Meat(),0,0);
+        saving=saving+multipleProductSaving(cart,new Alcohol(),1, new FrozenFood(),1,3);
+        subTotal=subTotal-saving;
         double tax = getTax(subTotal, "AZ"); // apply Arizona Tax
         double total = subTotal + tax;// add tax amount to total
 
@@ -112,24 +119,24 @@ public class Cart {
                     costAfterSavings -= 1;
                     producecounter = 0;
                 }
-            } else */if (cart.get(i).getClass() == Alcohol.class) {//change the type checking from string to class type
+            } else if (cart.get(i).getClass() == Alcohol.class) {//change the type checking from string to class type
                 alcoholCounter++;
-               // if (userAge < 21) {
-                   // throw new UnderAgeException("The User is not of age to purchase alcohol!");
-                //}
-            } else /*if (cart.get(i).getClass() == Dairy.class) {// change to Dairy (logica; error)
+                if (userAge < 21) {
+                    throw new UnderAgeException("The User is not of age to purchase alcohol!");
+                }
+            } else if (cart.get(i).getClass() == Dairy.class) {// change to Dairy (logica; error)
                 dairyCounter++; // change from frozenFoodCounter to dairyCounter
-            } else*/
+            } else {
 
                 if (cart.get(i).getClass() == FrozenFood.class) {//change the type checking from string to class type
                     frozenFoodCounter++;// change from dairyCounter  to frozenFoodCounter
                 }
-                   /* if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
+                    if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
                     costAfterSavings = costAfterSavings - 3; //changed (-) to (+) to calculate the amount saved (logical error)
                     alcoholCounter--;
                     frozenFoodCounter--;
-                }*/
-           // }
+                }
+            }*/
         }
         costAfterSavings=costAfterSavings-singleProductSaving(cart,new Produce(),3,1);
 
