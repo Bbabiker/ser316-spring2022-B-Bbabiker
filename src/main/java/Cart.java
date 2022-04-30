@@ -2,6 +2,7 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.List;
+import main.java.UnderAgeException;
 
 public class Cart {
 
@@ -101,23 +102,26 @@ public class Cart {
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
+        double saving=0;
         for (int i = 0; i < cart.size(); i++) {
             subTotal += cart.get(i).getCost();
             costAfterSavings = costAfterSavings + cart.get(i).getCost();
-            if (cart.get(i).getClass() == Produce.class) {
+           /* if (cart.get(i).getClass() == Produce.class) {
                 producecounter++;
                 if (producecounter >= 3) {
                     costAfterSavings -= 1;
                     producecounter = 0;
                 }
-            } else if (cart.get(i).getClass() == Alcohol.class) {//change the type checking from string to class type
+            } else */if (cart.get(i).getClass() == Alcohol.class) {//change the type checking from string to class type
                 alcoholCounter++;
                 if (userAge < 21) {
                     throw new UnderAgeException("The User is not of age to purchase alcohol!");
                 }
-            } else if (cart.get(i).getClass() == Dairy.class) {// change to Dairy (logica; error)
+            } else /*if (cart.get(i).getClass() == Dairy.class) {// change to Dairy (logica; error)
                 dairyCounter++; // change from frozenFoodCounter to dairyCounter
-            } else if (cart.get(i).getClass() == FrozenFood.class) {//change the type checking from string to class type
+            } else*/
+
+                if (cart.get(i).getClass() == FrozenFood.class) {//change the type checking from string to class type
                 frozenFoodCounter++;// change from dairyCounter  to frozenFoodCounter
                 if (alcoholCounter >= 1 && frozenFoodCounter >= 1) {
                     costAfterSavings = costAfterSavings - 3; //changed (-) to (+) to calculate the amount saved (logical error)
@@ -126,7 +130,41 @@ public class Cart {
                 }
             }
         }
+        costAfterSavings=costAfterSavings-singleProductSaving(cart,new Produce(),3,1);
+
+        costAfterSavings=costAfterSavings-singleProductSaving(cart,new Dairy(),0,0);
+
+        costAfterSavings=costAfterSavings-singleProductSaving(cart,new Alcohol(),0,0);
+
         return subTotal - costAfterSavings;
+    }
+
+    public double singleProductSaving( List<Product> cart, Product product,
+                                      int itemNum, int discount)throws UnderAgeException{
+       double subTotal =0;
+       double costAfterSavings =0;
+       int productCounter=0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            subTotal += cart.get(i).getCost();
+            costAfterSavings = costAfterSavings + cart.get(i).getCost();
+            if (cart.get(i).getClass() == product.getClass()) {
+
+                productCounter++;
+                if((cart.get(i).getClass() == Alcohol.class)&& this.userAge<21) {
+                    throw new UnderAgeException("The User is not of age to purchase alcohol!");
+                }else{
+                    if (productCounter >= itemNum) {
+                        costAfterSavings -= discount;
+                        productCounter = 0;
+                    }
+
+
+                }
+            }
+        }
+
+       return subTotal - costAfterSavings;
     }
 
     // Gets the tax based on state and the total
