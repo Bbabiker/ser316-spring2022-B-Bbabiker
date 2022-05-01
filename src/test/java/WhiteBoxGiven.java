@@ -186,7 +186,7 @@ public class WhiteBoxGiven {
 
     @Test
     public void addItem() throws UnderAgeException {
-        int length = cart8.cart.size();
+        int length = cart8.getCart().size();
         // length+=1;
         assertEquals(2, length, .01);
     }
@@ -195,7 +195,7 @@ public class WhiteBoxGiven {
     @Test
     public void removeItem() throws UnderAgeException {
 
-        int length = cart9.cart.size();
+        int length = cart9.getCart().size();
         // length+=1;
         assertEquals(0, length, .01);
     }
