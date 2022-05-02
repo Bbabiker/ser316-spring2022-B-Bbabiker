@@ -177,7 +177,7 @@ public class Cart {
     /**
      * This method is part of the refactoring of Task 3.1 in assignment 6.
      * This is a helper method to add more flexibility to th cart class.
-     * the method will calculate and returns the discount for any given single item.
+     * the method will calculate and returns the discount for any given singlegit item.
      * this method is used in both, calcCost() and amountSaved() methods.
      * @param cart shopping cart
      * @param product product to calculate the discount for.
