@@ -6,12 +6,12 @@ import main.java.UnderAgeException;
 
 public class Cart {
 
-    //changed from protected to private. Crosponding to Task 5 in the assignment.
+    //changed from protected to private and added getter method. Removing 'smell', Task 5 in assignment 6.
     private int userAge;
 
-    //changed from public to private. Crosponding to Task 5 in the assignment.
+    //changed from protected to private and added getter method. Removing 'smell', Task 5 in assignment 6.
     private List<Product> cart;
-    // public int cartStorage;//SER316 TASK 2 SPOT- BUGS FIX
+    
 
     /**
      * Calculates the final cost after all savings and tax has been applied.
@@ -29,13 +29,15 @@ public class Cart {
 
         double subTotal = 0;  // hold the cart subtotal
         double saving=0;
-        // counter for the products
+
+        //refactoring duplicate code and eliminates  instance variables. Task 3.2
        /* int producecounter = 0;
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
         int meatCounter = 0;*/
 
+		//added for-each instead of for-loop to calculate all items' total.  Task 5 in the assignment 6
         for(Product p: cart){
             subTotal +=p.getCost();
 
@@ -93,6 +95,9 @@ public class Cart {
 
             }
         }*/
+		
+		//refactored the above codes to enhance flexibility and efficiency by eliminating conditional if-statement
+        // and utilize the helper method instead conforming to Task 3.2 in assignment 6.
         saving=saving+singleProductSaving(getCart(),new Produce(),3,1);
         saving=saving+singleProductSaving(getCart(),new Alcohol(),0,0);
         saving=saving+singleProductSaving(getCart(),new FrozenFood(),0,0);
@@ -112,21 +117,24 @@ public class Cart {
     public double Amount_saved() throws UnderAgeException {  // change teturn type to double to avoid precesion loss
         double subTotal = 0; // change type to double
         double costAfterSavings = 0;  // change type to double
+		
+		//refactoring the code and eliminating  instance variables. Task 3.1
        /* int producecounter = 0;  // change type to int
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
         double saving=0;*/
 
+		//added for-each instead of for-loop to calculate all items' total. Task 3.1 in the assignment 6
         for(Product p: getCart()){
             subTotal +=p.getCost();
             costAfterSavings +=p.getCost();
 
         }
 
-      //  for (int i = 0; i < cart.size(); i++) {
+        /*for (int i = 0; i < cart.size(); i++) {
 
-          /*  subTotal += cart.get(i).getCost();
+            subTotal += cart.get(i).getCost();
             costAfterSavings = costAfterSavings + cart.get(i).getCost();
             if (cart.get(i).getClass() == Produce.class) {
                 producecounter++;
@@ -151,8 +159,11 @@ public class Cart {
                     alcoholCounter--;
                     frozenFoodCounter--;
                 }
-            }*/
-       // }
+            }
+        }*/
+		
+		//refactored the above codes to enhance flexibility and efficiency by eliminating conditional if-statement
+        // and utilize the helper method instead. Task 3.1 in assignment 6.
         costAfterSavings=costAfterSavings-singleProductSaving(getCart(),new Produce(),3,1);
 
         costAfterSavings=costAfterSavings-singleProductSaving(getCart(),new Dairy(),0,0);
@@ -163,6 +174,18 @@ public class Cart {
         return subTotal - costAfterSavings;
     }
 
+    /**
+     * This method is part of the refactoring of Task 3.1 in assignment 6.
+     * This is a helper method to add more flexibility to th cart class.
+     * the method will calculate and returns the discount for any given item.
+     * this method is used in both, calcCost() and amountSaved() methods.
+     * @param cart shopping cart
+     * @param product product to calculate the discount for.
+     * @param itemNum number of product items to be eligible for a discount.
+     * @param discount number of discount items
+     * @return saved amount
+     * @throws UnderAgeException derAgeException is thrown if the user is underage fo alcohol purchase
+     */
     public double singleProductSaving( List<Product> cart, Product product,
                                       int itemNum, int discount)throws UnderAgeException{
        double subTotal =0;
@@ -191,7 +214,20 @@ public class Cart {
        return subTotal - costAfterSavings;
     }
 
-
+    /**
+     * This method is part of the refactoring of Task 3.1 in assignment 6.
+     * This is a helper method to add more flexibility to th cart class.
+     * the method will calculate and returns the discount for any given combination of two items.
+     * this method is used in both, calcCost() and amountSaved() methods.
+     * @param cart shopping cart
+     * @param product1 first product to calculate the discount for.
+     * @param itemNum1 number of the items of the first product to be eligible for a discount.
+     * @param product2 second product to calculate the discount for.
+     * @param itemNum2 number of the items of the second product to be eligible for a discount.
+     * @param discount number of discount items
+     * @return saved amount
+     * @throws UnderAgeException is thrown if the user is underage fo alcohol purchase
+     */
     public double multipleProductSaving( List<Product> cart, Product product1,int itemNum1,Product product2,
                                        int itemNum2, int discount)throws UnderAgeException{
         double subTotal =0;
@@ -229,12 +265,20 @@ public class Cart {
 
     }
 
+    /**
+     * getter method to return the shopping cart. Task 5 assignment 6
+     * @return the shopping cart
+     */
     public List<Product> getCart(){
 
 
         return this.cart;
     }
 
+    /**
+     * getter method to return the user age. Task 5 assignment 6
+     * @return the user age
+     */
     public int getAge(){
 
 
