@@ -43,7 +43,8 @@ public class Cart {
 
         }
 
-       /* for (int i = 0; i < cart.size(); i++) {
+       /* // The refactored code (Task 5 in assignment 6)
+       for (int i = 0; i < cart.size(); i++) {
 
             subTotal += cart.get(i).getCost();//add products price to subtotal
             // check for Produce
@@ -118,8 +119,9 @@ public class Cart {
         double subTotal = 0; // change type to double
         double costAfterSavings = 0;  // change type to double
 		
-		//refactoring the code and eliminating  instance variables. Task 3.1
-       /* int producecounter = 0;  // change type to int
+
+       /* //refactoring the code and eliminating  instance variables (Task 3.1 in assignment 6)
+        int producecounter = 0;  // change type to int
         int alcoholCounter = 0;
         int frozenFoodCounter = 0;
         int dairyCounter = 0;
@@ -132,7 +134,8 @@ public class Cart {
 
         }
 
-        /*for (int i = 0; i < cart.size(); i++) {
+        /* // The eliminated codes (Tasl 3.1 in assignment 6)
+        for (int i = 0; i < cart.size(); i++) {
 
             subTotal += cart.get(i).getCost();
             costAfterSavings = costAfterSavings + cart.get(i).getCost();
